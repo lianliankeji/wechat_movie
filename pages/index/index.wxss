@@ -1,0 +1,71 @@
+/* pages/index/index.wxss */
+
+.container {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.top {
+  width: 100%;
+  height: 400rpx;
+}
+
+.title {
+  text-align: center;
+  margin: 10rpx;
+}
+
+.movielist {
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 14rpx;
+}
+
+.moviename {
+  font-size: 34rpx;
+}
+
+.movietype {
+  font-size: 24rpx;
+  align-items: flex-end;
+  color: #DDBF90;
+}
+
+.moviescore {
+  color: #dc0606;
+  margin-left: 300rpx;
+}
+
+.actor {
+  font-size: 26rpx;
+  text-align: left;
+  margin-top: 14rpx;
+}
+
+.intro {
+  text-align: left;
+  margin-top: 14rpx;
+}
+
+.videocontent {
+  position: relative;
+}
+
+.cover {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.video {
+  width: 100%;
+  height: 400rpx;
+  margin-top: 14rpx;
+}

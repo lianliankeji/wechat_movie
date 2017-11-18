@@ -1,0 +1,38 @@
+{
+  "pages": [
+        "pages/buy/buy",
+    "pages/index/index",
+    "pages/user/user"
+
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "backgroundColor": "light",
+    "navigationBarBackgroundColor": "#f8f8f8",
+    "navigationBarTitleText": "华影",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "backgroundColor": "#ffffff",
+    "selectedColor": "#0D8FEF",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "./image/homeAct.png",
+        "iconPath": "./image/home.png",
+        "pagePath": "pages/index/index"
+      },
+      {
+        "selectedIconPath": "./image/addAct.png",
+        "iconPath": "./image/add.png",
+        "pagePath": "pages/user/user"
+      },
+      {
+        "selectedIconPath": "./image/mineAct.png",
+        "iconPath": "./image/mine.png",
+        "pagePath": "pages/user/user"
+      }
+    ]
+  }
+}

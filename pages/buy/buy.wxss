@@ -1,0 +1,71 @@
+/* pages/buy/buy.wxss */
+
+.container {
+  background-color: #fff;
+}
+
+.buybg {
+  position: fixed;
+  width: 100%;
+  height: 200rpx;
+}
+
+.movie {
+  position: fixed;
+  top: 100rpx;
+  left: 50rpx;
+  width: 350rpx;
+  height: 250rpx;
+}
+
+.name {
+  z-index: 99;
+  position: absolute;
+  left: 430rpx;
+  top: 120rpx;
+  color: #fff;
+}
+
+.actor {
+  z-index: 99;
+  position: absolute;
+  left: 430rpx;
+  top: 220rpx;
+  color: #666;
+}
+
+.area {
+  position: absolute;
+  top: 400rpx;
+  width: 90%;
+  padding: 30rpx;
+  text-align: center;
+  color: #666;
+}
+
+.line {
+  width: 86%;
+  height: 0;
+  border-bottom: #ddbf90 1px dashed;
+  position: absolute;
+  top: 640rpx;
+  padding: 20rpx;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buy {
+  position: absolute;
+  top: 700rpx;
+}
+
+.button {
+  position: absolute;
+  top: 800rpx;
+  background-image: '../../image/butn.png';
+}

@@ -1,0 +1,38 @@
+<!--pages/buy/buy.wxml-->
+
+<view class='container'>
+  <image class='buybg' src='../../image/buybg.png'></image>
+  <image class='movie' src='../../image/buymovie.png'></image>
+
+  <text class='name'>无证之罪</text>
+  <text class='actor'>演员：邓家佳/秦浩/姚橹  </text>
+
+  <view class='info'>
+    <text class='area'>故事发生在繁华都市,凶案现场罪犯“雪人”总是故意留下一枚指纹和一张字条——“请来抓我”,除此之外没有丝毫破绽。面对如此高调的连环杀手，专案组成立四次又解散四次毫无头绪，只能求助略带痞气的警察严良。严良临时受命，解开谜团挖掘真相。</text>
+    <view class='line'></view>
+  </view>
+
+  <view class='buy'>
+
+    <view>
+      <label class='name'>价格 </label>
+      <label class='name'>10FRT </label>
+    </view>
+
+    <view class='item'>
+      <label class='name'>联系电话 </label>
+      <view class='input-border'>
+        <input bindinput='getmobile' type='number' name="phoneno" value='{{mobile}}'></input>
+      </view>
+    </view>
+    <view class='item'>
+      <label class='name'>验证码</label>
+      <view class='input-border'>
+        <input bindinput='setCheck' type='number' name="check"></input>
+        <view data-mobile='{{mobile}}' style='background:{{!codeflag?"#DDDDDD":"#4993F7"}}' catchtap='sendmsg' class='send'>{{codestate}}</view>
+      </view>
+    </view>
+
+  </view>
+  <button class='button'>购买</button>
+</view>

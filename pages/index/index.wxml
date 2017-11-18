@@ -1,0 +1,26 @@
+<!--pages/index/index.wxml-->
+<view class='container'>
+  <view>
+    <image class='top' src='../../image/top.png'></image>
+  </view>
+  <view class='title'>热门影片</view>
+  <view>
+    <image wx:if="{{!hidden}}" class='video' src='../../image/playmovie.png' bindtap='showvideo'></image>
+    <!-- <video wx:if="{{hidden}}" class='video' autoplay poster='../../image/playmovie.png' objectFit='fill' src='https://store.lianlianchains.com/test.mp4'></video> -->
+  </view>
+  <view class='movielist'>
+    <view class='info'>
+      <view class='moviename'>无证之罪
+        <text class='movietype'> [电视剧]</text>
+        <text class='moviescore'> 8.9分</text>
+      </view>
+    </view>
+    <view class='actor'>
+      <view class=''>导演：吕行 演员：邓家佳/秦浩/姚橹 </view>
+    </view>
+    <view class='intro'>
+      <view class=''>故事发生在繁华都市，凶案现场，罪犯“雪人”总是故意... </view>
+    </view>
+  </view>
+
+</view>
