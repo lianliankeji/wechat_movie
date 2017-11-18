@@ -9,9 +9,9 @@ Page({
   },
   showvideo(){
 
-    this.setData({
-      hidden: true
-    })
+    // this.setData({
+    //   hidden: true
+    // })
 
     if(true){
 

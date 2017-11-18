@@ -15,7 +15,7 @@
   top: 100rpx;
   left: 50rpx;
   width: 350rpx;
-  height: 250rpx;
+  height: 280rpx;
 }
 
 .name {
@@ -48,7 +48,7 @@
   height: 0;
   border-bottom: #ddbf90 1px dashed;
   position: absolute;
-  top: 640rpx;
+  top: 540rpx;
   padding: 20rpx;
 }
 
@@ -60,12 +60,58 @@
 }
 
 .buy {
+  /* z-index: 1000; */
   position: absolute;
-  top: 700rpx;
+  top: 600rpx;
+  left: 36rpx; 
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .button {
-  position: absolute;
-  top: 800rpx;
-  background-image: '../../image/butn.png';
+  /* top: 960rpx; */
+  text-align: center;
+  line-height: 80rpx;
+  width: 100%;
+  background-color: #DDBF90;
+  color: #FFFFFF;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 20rpx;
+}
+
+.price {
+  color: #dc0606;
+  margin-left: 20rpx;
+}
+
+.inp {
+  margin-left: 20rpx;
+}
+
+.sendcode {
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.title {
+  width: 180rpx;
+}
+
+.send {
+  color: #DDBF90;
+  border: 1px #DDBF90 solid;
+  width: 90rpx;
+  line-height: 50rpx;
+  text-align: center;
+  font-size: 24rpx;
+  background-color: #FFFFFF;
 }

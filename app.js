@@ -34,7 +34,7 @@ App({
                       method: 'GET',  
                       success: function (secr) {
                         console.log(secr)
-                        wx.setStorageSync('unionId', secr.data.userInfo.unionId);
+                        // wx.setStorageSync('unionId', secr.data.userInfo.unionId);
                       }
                     });
                   }
