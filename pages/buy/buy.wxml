@@ -20,13 +20,6 @@
     </view>
 
     <view class='item'>
-      <label class='title'>手机号码 </label>
-      <view class='inp'>
-        <input bindinput='getmobile' type='number' name="phoneno" value='{{mobile}}'></input>
-      </view>
-    </view>
-
-    <view class='item'>
       <label class='title'>验证号码 </label>
       <view class='sendcode'>
         <input bindinput='setCheck' type='number' name="check"></input>

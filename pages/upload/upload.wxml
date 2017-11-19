@@ -1,0 +1,27 @@
+<!--pages/upload/upload.wxml-->
+
+<view class='container'>
+
+  <view class='img'>
+    <image src='../../image/upload.png' class='upimg'></image>
+    <view class='uptext'>上传视频</view>
+  </view>
+
+  <view class='tr'>
+    <label>导演</label>
+    <input></input>
+  </view>
+
+  <view class='tr'>
+    <label>主演</label>
+    <input></input>
+  </view>
+
+  <view class='tr'>
+    <label>剧情</label>
+    <textarea></textarea>
+  </view>
+
+  <view class='btn' bindtap='upload'>提交</view>
+
+</view>

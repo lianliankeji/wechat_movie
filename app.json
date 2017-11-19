@@ -2,7 +2,9 @@
   "pages": [
     "pages/index/index",
     "pages/buy/buy",
-    "pages/user/user"
+    "pages/user/user",
+    "pages/recharge/recharge",
+    "pages/upload/upload"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -25,7 +27,7 @@
       {
         "selectedIconPath": "./image/addAct.png",
         "iconPath": "./image/add.png",
-        "pagePath": "pages/user/user"
+        "pagePath": "pages/upload/upload"
       },
       {
         "selectedIconPath": "./image/mineAct.png",

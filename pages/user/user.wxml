@@ -1,2 +1,31 @@
 <!--pages/user/user.wxml-->
-<text>pages/user/user.wxml</text>
+
+<view class='container'>
+
+  <view class='title'>
+    <view>
+      <image class='img' src="{{avatarUrl}}"></image>
+    </view>
+    <view class='score'>
+      <label>{{nickName}}</label>
+      <label class='frt'>1200FRT</label>
+    </view>
+    <view class='recharge'>
+      <view bindtap='recharge'>充值</view>
+    </view>
+  </view>
+
+  <view class='list'>
+    <view class='listtitle'>我的影片</view>
+    <view>
+      <image wx:if="{{!hidden}}" class='video' src='../../image/um2.png' bindtap='showvideo'></image>
+      <!-- <video wx:if="{{hidden}}" class='video' autoplay poster='../../image/playmovie.png' objectFit='fill' src='https://store.lianlianchains.com/test.mp4'></video> -->
+    </view>
+    <view>
+      <image wx:if="{{!hidden}}" class='video' src='../../image/um1.png' bindtap='showvideo'></image>
+      <!-- <video wx:if="{{hidden}}" class='video' autoplay poster='../../image/playmovie.png' objectFit='fill' src='https://store.lianlianchains.com/test.mp4'></video> -->
+    </view>
+
+  </view>
+
+</view>

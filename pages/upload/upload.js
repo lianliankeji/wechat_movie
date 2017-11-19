@@ -1,40 +1,24 @@
-// pages/user/user.js
+// pages/upload/upload.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    hidden: false
+
   },
 
-  recharge() { 
+  upload() {
 
-    wx.navigateTo({
-      url: '../recharge/recharge',
+    wx.switchTab({
+      url: '../index/index',
     })
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
 
-    let that = this;
-    wx.getUserInfo({
-      success: function (res) {
-        console.log(res.userInfo.nickName)
-        that.setData({
-          avatarUrl: res.userInfo.avatarUrl,
-          nickName: res.userInfo.nickName
-        })
-      },
-      fail: function (err) {
-        that.setData({
-          avatarUrl: '../../image/user.png'
-        })
-      }
-    });
   },
 
   /**

@@ -1,0 +1,78 @@
+/* pages/recharge/recharge.wxss */
+
+.container {
+  background-color: #fff;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rpx;
+}
+
+.img {
+  width: 90%;
+  margin-top: 30rpx;
+}
+
+.info {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  top: 50rpx;
+}
+
+.frt {
+  display: flex;
+  flex-direction: row;
+  margin: 40rpx 0 0 110rpx;
+  justify-content: space-between;
+  width: 70%;
+}
+
+.lname {
+  color: #ab6409;
+}
+
+.lvalue {
+  color: #fff;
+}
+
+.rc {
+  color: #ab6409;
+  margin: 70rpx 0 0 110rpx;
+}
+
+input {
+  background-color: #fff;
+  width: 70%;
+  height: 60rpx;
+  border-radius: 12rpx;
+  margin: 50rpx 0 0 110rpx;
+}
+
+.tr {
+  color: #ab6409;
+  margin: 50rpx 120rpx 0 0;
+  align-self: flex-end;
+  font-size: 26rpx;
+}
+
+.btn {
+  align-self: center;
+  width: 88%;
+  background-color: #DCB77C;
+  color: #FFFFFF;
+  margin: 200rpx 0 0 0;
+  text-align: center;
+  line-height: 90rpx;
+  border-radius: 12rpx;
+}
+
+.sale {
+  margin: 70rpx 0 0 110rpx;
+}

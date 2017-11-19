@@ -13,7 +13,7 @@
 .movie {
   position: fixed;
   top: 100rpx;
-  left: 50rpx;
+  left: 40rpx;
   width: 350rpx;
   height: 280rpx;
 }
@@ -103,7 +103,8 @@
 }
 
 .title {
-  width: 180rpx;
+  width: 150rpx;
+  margin-right: 30rpx;
 }
 
 .send {
