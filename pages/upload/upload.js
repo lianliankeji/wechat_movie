@@ -37,16 +37,17 @@ Page({
   },
   upload() {
 
+    console.log(this.data.videosrc)
+
     wx.uploadFile({
-      url: 'https://store.lianlianchains.com/video/upload', //仅为示例，非真实的接口地址
+      url: 'https://store.lianlianchains.com/video/upload/', //仅为示例，非真实的接口地址
       filePath: this.data.videosrc,
-      name: 'file',
+      name: 'test',
       formData: {
-        user: 'test',
-        openid: wx.getStorageSync('user').openid,
-        director: this.data.director,
-        actor: this.data.actor,
-        description: this.data.description
+        'openid': wx.getStorageSync('user').openid,
+        'director': this.data.director,
+        'actor': this.data.actor,
+        'description': this.data.description
       },
       success: function (res) {
         console.log(res)

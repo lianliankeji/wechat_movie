@@ -9,7 +9,7 @@
   <view class='info'>
     <view class='frt'>
       <view class='lname'>账户余额</view>
-      <view class='lvalue'>100FRT</view>
+      <view class='lvalue'>{{frt}} FRT</view>
     </view>
     <view class='rc'>充值金额（FRT）</view>
     <input type='number' maxlength='8' bindinput='setAmt'></input>

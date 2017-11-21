@@ -6,7 +6,7 @@
   <view class='title'>热门影片</view>
   <view>
     <image wx:if="{{!hidden}}" class='video' src='../../image/playmovie.png' bindtap='showvideo'></image>
-    <video wx:if="{{hidden}}" class='video' autoplay poster='../../image/playmovie.png' objectFit='fill' src='https://store.lianlianchains.com/videos/Burning%20Ice.mp4'></video>
+    <video wx:if="{{hidden}}" id='myVideo' class='video' autoplay poster='../../image/playmovie.png' objectFit='fill' src='https://store.lianlianchains.com/videos/Burning%20Ice.mp4'></video>
   </view>
   <view class='movielist'>
     <view class='info'>
@@ -20,16 +20,15 @@
     </view>
   </view>
 
+  <view class='title'></view>
+  
   <view wx:for="{{movieList}}" wx:key="index" wx:for-item="item">
     <view>
-      <video class='video' src='{{item.src}}' autoplay objectFit='fill'></video>
+      <video class='video' src='{{ vurl + item.url}}' objectFit='fill'></video>
     </view>
     <view class='movielist'>
       <view class='actor'>
         <view class=''>导演：{{item.director}} 演员：{{item.actor}} </view>
-      </view>
-      <view class='intro'>
-        <view class=''>{{item.description}} </view>
       </view>
     </view>
   </view>

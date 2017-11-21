@@ -9,8 +9,8 @@
 }
 
 .img {
-  width: 260rpx;
-  height: 260rpx;
+  width: 230rpx;
+  height: 230rpx;
 }
 
 .back {
