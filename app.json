@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/result/result",
     "pages/buy/buy",
     "pages/user/user",
     "pages/recharge/recharge",

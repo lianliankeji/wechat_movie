@@ -59,3 +59,8 @@ textarea {
   text-align: center;
   background-color: #fff;
 }
+
+.video {
+  width: 100%;
+  height: 400rpx;
+}

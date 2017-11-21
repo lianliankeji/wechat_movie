@@ -1,0 +1,7 @@
+<!--pages/result/result.wxml-->
+<view class='container'>
+
+  <image src='../../image/success.png' class='img'></image>
+  <view class='back' bindtap='back'>返回首页</view>
+
+</view>

@@ -2,24 +2,26 @@
 
 <view class='container'>
 
-  <view class='img'>
-    <image src='../../image/upload.png' class='upimg'></image>
-    <view class='uptext'>上传视频</view>
+  <view class='img' >
+    <video src='{{videosrc}}' wx:if='{{show}}' class='video'></video>
+    <image src='../../image/upload.png' wx:if='{{!show}}' 
+    class='upimg' bindtap='uploadimg'></image>
+    <view class='uptext' wx:if='{{!show}}'>上传视频</view>
   </view>
 
   <view class='tr'>
     <label>导演</label>
-    <input></input>
+    <input bindinput='setDr' value='{{director}}'></input>
   </view>
 
   <view class='tr'>
     <label>主演</label>
-    <input></input>
+    <input bindinput='setAc' value='{{actor}}'></input>
   </view>
 
   <view class='tr'>
     <label>剧情</label>
-    <textarea></textarea>
+    <textarea bindinput='setDis' value='{{description}}'></textarea>
   </view>
 
   <view class='btn' bindtap='upload'>提交</view>

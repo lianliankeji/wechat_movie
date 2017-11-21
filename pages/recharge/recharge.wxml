@@ -12,7 +12,7 @@
       <view class='lvalue'>100FRT</view>
     </view>
     <view class='rc'>充值金额（FRT）</view>
-    <input type='number'></input>
+    <input type='number' maxlength='8' bindinput='setAmt'></input>
     <view class='tr'>1 FRT=1 RMB</view>
     <view class='sale'>.首充大于50RMB送10FRT</view>
     <view class='btn' bindtap='buy'>确认充值</view>

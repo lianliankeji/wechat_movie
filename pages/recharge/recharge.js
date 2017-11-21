@@ -1,4 +1,6 @@
 // pages/recharge/recharge.js
+import fetch from '../../utils/fetch.js'
+
 Page({
 
   /**
@@ -7,12 +9,46 @@ Page({
   data: {
   
   },
-
+  setAmt(e){
+    this.data.amt = e.detail.value
+  },
   buy(){
 
-    wx.navigateBack({
-      url: '../user/user',
+    fetch({
+      url: '/frt/invoke',
+      //   baseUrl: "http://192.168.50.57:9888", 
+      baseUrl: "https://store.lianlianchains.com",
+      data: {
+        func: 'transefer',
+        ccId: '39304981a1b8d8a2dba6dc1b318267daa5c7ba4acfea4a99dab15e7ef9aee2c2',
+        usr: 'frtpool',
+        acc: 'frtpool',
+        reacc: wx.getStorageSync('unionId'),
+        amt: this.data.amt
+      },
+      noLoading: false,
+      method: "GET",
+      header: { 'content-type': 'application/x-www-form-urlencoded' }
+      //  header: { 'content-type': 'application/json' }
+    }).then(res => {
+      console.log(res)
+
+      if(res.code == '0'){
+
+        wx.navigateBack({
+          url: '../user/user',
+        })
+      }
+
+    }).catch(err => {
+
+      console.log("出错了")
+      wx.showToast({
+        title: '网络繁忙'
+      })
+      console.log(err)
     })
+
   },
 
   /**

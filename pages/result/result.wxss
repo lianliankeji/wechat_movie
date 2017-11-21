@@ -1,0 +1,26 @@
+/* pages/result/result.wxss */
+
+.container {
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.img {
+  width: 260rpx;
+  height: 260rpx;
+}
+
+.back {
+  color: #ddbf90;
+  border: 1px #ddbf90 solid;
+  width: 50%;
+  line-height: 80rpx;
+  text-align: center;
+}
+
+.info {
+  font-size: 34rpx;
+}
