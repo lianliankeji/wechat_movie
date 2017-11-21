@@ -159,6 +159,14 @@ Page({
    */
   onPullDownRefresh: function () {
 
+    console.log('onPullDownRefresh')
+
+    movieList = []
+    page = 0
+    totalpage = 0
+
+    this.querymovie();
+
   },
 
   /**

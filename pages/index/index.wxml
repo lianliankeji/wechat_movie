@@ -19,8 +19,6 @@
       <view class=''>故事发生在繁华都市，凶案现场... </view>
     </view>
   </view>
-
-  <view class='title'></view>
   
   <view wx:for="{{movieList}}" wx:key="index" wx:for-item="item">
     <view>
@@ -28,7 +26,8 @@
     </view>
     <view class='movielist'>
       <view class='actor'>
-        <view class=''>导演：{{item.director}} 演员：{{item.actor}} </view>
+        <view class=''><text class='gold'>#导演/</text>{{item.director}}   
+        <text class='gold'>#演员/</text>{{item.actor}} </view>
       </view>
     </view>
   </view>
