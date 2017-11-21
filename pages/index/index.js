@@ -81,6 +81,8 @@ Page({
         movieList: res.data.video  
       })
 
+      wx.stopPullDownRefresh();
+
     }).catch(err => {
 
       wx.showToast({
