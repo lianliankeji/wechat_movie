@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    show: false
+
   },
   setDr(e) {
     this.data.director = e.detail.value
@@ -31,6 +31,8 @@ Page({
           videosrc: res.tempFilePath,
           show: true
         })
+
+        console.log('uploadimg')
       }
     })
 
@@ -39,7 +41,11 @@ Page({
 
     console.log(this.data.videosrc)
 
-    wx.uploadFile({
+    this.setData({
+      hidden: true
+    })
+
+    const uploadTask = wx.uploadFile({
       url: 'https://store.lianlianchains.com/video/upload/', //仅为示例，非真实的接口地址
       filePath: this.data.videosrc,
       name: 'test',
@@ -50,7 +56,7 @@ Page({
         'description': this.data.description
       },
       success: function (res) {
-        console.log(res)
+        console.log('uploadFile' + res);
 
         fetch({
           url: '/frt/invoke',
@@ -71,13 +77,11 @@ Page({
         }).then(res => {
           console.log(res)
 
-          if (res.code == '0') {
-
-            wx.redirectTo({
-              url: '../result/result',
+          setTimeout(function () {
+            wx.switchTab({
+              url: '../index/index',
             })
-
-          }
+          }, 2000)
 
         }).catch(err => {
 
@@ -89,6 +93,17 @@ Page({
         })
 
       }
+    })
+
+    uploadTask.onProgressUpdate((res) => {
+
+      this.setData({
+        progress: res.progress
+      })
+
+      // console.log('上传进度', res.progress)
+      // console.log('已经上传的数据长度', res.totalBytesSent)
+      // console.log('预期需要上传的数据总长度', res.totalBytesExpectedToSend)
     })
 
   },
@@ -112,17 +127,23 @@ Page({
   onShow: function () {
 
     this.setData({
+      hidden: false,
       director: '',
       actor: '',
       description: ''
     })
+
+    console.log('onShow')
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    
+    this.setData({
+      show: false,
+    })
   },
 
   /**

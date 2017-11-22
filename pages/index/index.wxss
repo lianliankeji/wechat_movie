@@ -77,3 +77,8 @@
 .diy {
   border-bottom: 1px #ddbf90 solid;
 }
+
+.fav {
+  height: 40rpx;
+  width: 40rpx;
+}

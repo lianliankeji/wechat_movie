@@ -1,11 +1,14 @@
 <!--pages/upload/upload.wxml-->
 
+
 <view class='container'>
 
-  <view class='img' >
+  <progress class='pro' wx:if='{{hidden}}' 
+  percent="{{progress}}" stroke-width="3" color='#ddbf90' active="true" />
+
+  <view class='img'>
     <video src='{{videosrc}}' wx:if='{{show}}' class='video'></video>
-    <image src='../../image/upload.png' wx:if='{{!show}}' 
-    class='upimg' bindtap='uploadimg'></image>
+    <image src='../../image/upload.png' wx:if='{{!show}}' class='upimg' bindtap='uploadimg'></image>
     <view class='uptext' wx:if='{{!show}}'>上传视频</view>
   </view>
 
@@ -24,6 +27,6 @@
     <textarea bindinput='setDis' value='{{description}}'></textarea>
   </view>
 
-  <view class='btn' bindtap='upload'>提交</view>
+  <view wx:if='{{!hidden}}' class='btn' bindtap='upload' disabled='true'>提交</view>
 
 </view>

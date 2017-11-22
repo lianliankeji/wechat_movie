@@ -1,12 +1,11 @@
 <!--pages/index/index.wxml-->
 <view class='container'>
   <view>
-    <image class='top' src='../../image/top.png'></image>
+    <image class='top' src='../../image/um1.png'></image>
   </view>
   <view class='title'>热门影片</view>
-  <view>
-    <image wx:if="{{!hidden}}" class='video' src='../../image/playmovie.png' bindtap='showvideo'></image>
-    <video wx:if="{{hidden}}" id='myVideo' class='video' autoplay poster='../../image/playmovie.png' objectFit='fill' src='https://store.lianlianchains.com/videos/Burning%20Ice.mp4'></video>
+  <!-- <view>
+    <video id='myVideo' class='video' objectFit='fill' src='https://store.lianlianchains.com/videos/Burning%20Ice.mp4'></video>
   </view>
   <view class='movielist'>
     <view class='info'>
@@ -18,16 +17,27 @@
     <view class='intro'>
       <view class=''>故事发生在繁华都市，凶案现场... </view>
     </view>
-  </view>
-  
+  </view> -->
+
   <view wx:for="{{movieList}}" wx:key="index" wx:for-item="item">
     <view>
-      <video class='video' src='{{ vurl + item.url}}' objectFit='fill'></video>
+      <video class='video' src='{{ vurl + item.url}}' objectFit='fill'
+        bindplay='play' id='{{item.id}}' data-vid='{{item.id}}'></video>
     </view>
     <view class='movielist'>
       <view class='actor'>
-        <view class=''><text class='gold'>#导演/</text>{{item.director}}   
-        <text class='gold'>#演员/</text>{{item.actor}} </view>
+        <view class='info'>
+
+          <view>
+            <text class='gold'>#导演/</text>{{item.director}}
+            <text class='gold'>#演员/</text>{{item.actor}}
+          </view>
+
+          <view>
+            <image class='fav' src='../../image/favorites.png'></image>
+          </view>
+
+        </view>
       </view>
     </view>
   </view>

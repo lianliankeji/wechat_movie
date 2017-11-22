@@ -11,12 +11,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    hidden: false,
-    vurl: 'https://store.lianlianchains.com/videos/'
+    vurl: 'https://store.lianlianchains.com/videos/',
+    vid: '0'
   },
-  showvideo() {
+  play(e) {
 
-    this.data.vid = 1;
+    console.log(e)
+
+    this.data.vid = e.target.dataset.vid;
+    this.videoContext = wx.createVideoContext(this.data.vid + '')
 
     fetch({
       url: '/video/validate',
@@ -37,15 +40,12 @@ Page({
 
         if (res.data == '0') {
 
+          this.videoContext.pause();
+
           wx.navigateTo({
             url: '../buy/buy?vid=' + this.data.vid,
           })
 
-        } else {
-
-          this.setData({
-            hidden: true
-          })
         }
       }
 
@@ -62,6 +62,11 @@ Page({
   },
   querymovie() {
 
+    // wx.showToast({
+    //   title: '加载中',
+    //   icon: 'loading'
+    // });
+
     fetch({
       url: "/video/queryvideo",
       //   baseUrl: "http://192.168.50.57:9888",
@@ -77,11 +82,18 @@ Page({
       console.log(res)
 
       totalpage = res.data.totalpage
+      movieList = movieList.concat(res.data.video)
+
+      console.log(movieList)
+
       this.setData({
-        movieList: res.data.video  
+        movieList: movieList
       })
 
+      // wx.hideNavigationBarLoading()
       wx.stopPullDownRefresh();
+
+      //wx.hideToast();
 
     }).catch(err => {
 
@@ -104,6 +116,8 @@ Page({
       console.log("没有更多了")
       page = totalpage
 
+      wx.hideToast();
+
     } else {
 
       console.log("加载更多")
@@ -124,7 +138,6 @@ Page({
    */
   onReady: function () {
 
-    this.videoContext = wx.createVideoContext('myVideo')
   },
 
   /**
@@ -146,7 +159,9 @@ Page({
   onHide: function () {
     console.log('hide')
 
-    this.videoContext.stop;
+    this.videoContext = wx.createVideoContext(this.data.vid + '')
+    this.videoContext.pause()
+
   },
 
   /**
@@ -162,6 +177,8 @@ Page({
   onPullDownRefresh: function () {
 
     console.log('onPullDownRefresh')
+
+    // wx.showNavigationBarLoading()
 
     movieList = []
     page = 0
