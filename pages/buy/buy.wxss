@@ -62,7 +62,7 @@
 .buy {
   /* z-index: 1000; */
   position: absolute;
-  top: 600rpx;
+  top: 20rpx;
   left: 36rpx; 
   width: 90%;
   display: flex;
@@ -72,6 +72,7 @@
 
 .button {
   /* top: 960rpx; */
+  margin-top: 20rpx;
   text-align: center;
   line-height: 80rpx;
   width: 100%;
@@ -114,4 +115,6 @@
   text-align: center;
   font-size: 24rpx;
   background-color: #FFFFFF;
+  margin-left: 20rpx;
 }
+

@@ -1,16 +1,6 @@
 <!--pages/buy/buy.wxml-->
 
 <view class='container'>
-  <image class='buybg' src='../../image/buybg.png'></image>
-  <image class='movie' src='../../image/buymovie.png'></image>
-
-  <text class='name'>无证之罪</text>
-  <text class='actor'>演员：邓家佳/秦浩/姚橹  </text>
-
-  <view class='info'>
-    <text class='area'>故事发生在繁华都市,凶案现场罪犯“雪人”总是故意留下一枚指纹和一张字条——“请来抓我”,除此之外没有丝毫破绽...</text>
-    <view class='line'></view>
-  </view>
 
   <view class='buy'>
 
@@ -18,16 +8,21 @@
       <label class='title'>价格 </label>
       <view class='price'>10FRT</view>
     </view>
-
+    <view class='item'>
+      <label class='title'>手机 </label>
+      <view>
+        <input type='number' maxlength='11'></input>
+      </view>
+    </view>
     <view class='item'>
       <label class='title'>验证码 </label>
       <view class='sendcode'>
-        <input type='number' maxlength='4' name="check"></input>
-        <view data-mobile='{{mobile}}' class='send'>{{codestate}}</view>
+        <input type='number' maxlength='4'></input>
+        <button data-mobile='{{mobile}}' open-type="getPhoneNumber" class='send' bindgetphonenumber='getPhoneNumber'>{{codestate}}</button>
       </view>
     </view>
 
     <view class='button' bindtap='buy'>购买</view>
-    
+
   </view>
 </view>
