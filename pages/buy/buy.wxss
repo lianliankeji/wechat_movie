@@ -110,7 +110,7 @@
 .send {
   color: #DDBF90;
   border: 1px #DDBF90 solid;
-  width: 90rpx;
+  width: 120rpx;
   line-height: 50rpx;
   text-align: center;
   font-size: 24rpx;

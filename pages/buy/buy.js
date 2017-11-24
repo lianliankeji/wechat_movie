@@ -21,6 +21,22 @@ Page({
         success: function (res) { }
       })
     } else {
+
+      wx.request({
+        url: 'https://store.lianlianchains.com/video/wx/decodeUserInfo',
+        data: {
+          openid: wx.getStorageSync('user').openid,
+          session_key: wx.getStorageSync('user').session_key,
+          encryptedData: e.detail.encryptedData,
+          iv: e.detail.iv
+        },
+        method: 'GET',
+        success: function (secr) {
+          console.log(secr)
+          
+        }
+      });
+
       wx.showModal({
         title: '提示',
         showCancel: false,
