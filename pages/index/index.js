@@ -19,6 +19,7 @@ Page({
     console.log(e)
 
     this.data.vid = e.target.dataset.vid;
+    this.data.up = e.target.dataset.up;
     this.videoContext = wx.createVideoContext(this.data.vid + '')
 
     fetch({
@@ -27,7 +28,7 @@ Page({
       baseUrl: "https://store.lianlianchains.com",
       data: {
         'id': this.data.vid,
-        'openid': wx.getStorageSync('user').openid
+        'openid': wx.getStorageSync('unionId')
       },
       noLoading: false,
       method: "GET",
@@ -43,7 +44,7 @@ Page({
           this.videoContext.pause();
 
           wx.navigateTo({
-            url: '../buy/buy?vid=' + this.data.vid,
+            url: '../buy/buy?vid=' + this.data.vid + '&up=' + this.data.up,
           })
 
         }

@@ -2,6 +2,7 @@
 
 .container {
   background-color: #fff;
+  padding-top: 50rpx;
 }
 
 .buybg {
@@ -89,7 +90,8 @@
 
 .price {
   color: #dc0606;
-
+  width: 80%;
+   line-height: 50rpx;
 }
 
 .inp {
@@ -103,8 +105,9 @@
 }
 
 .title {
-  width: 150rpx;
+  width: 200rpx;
   margin-right: 30rpx;
+  /* border: 1px #dc0606 solid; */
 }
 
 .send {

@@ -50,7 +50,7 @@ Page({
       filePath: this.data.videosrc,
       name: 'test',
       formData: {
-        'openid': wx.getStorageSync('user').openid,
+        'openid': wx.getStorageSync('unionId'),
         'director': this.data.director,
         'actor': this.data.actor,
         'description': this.data.description

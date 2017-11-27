@@ -6,19 +6,20 @@
 
     <view class='item'>
       <label class='title'>价格 </label>
-      <view class='price'>10FRT</view>
+      <view class='price'>10 FRT</view>
     </view>
     <view class='item'>
-      <label class='title'>手机 </label>
-      <view>
+      <label class='title'>手机号 </label>
+      <view class='sendcode'>
         <input type='number' maxlength='11' value='{{mobile}}'></input>
+        <button open-type="getPhoneNumber" class='send' bindgetphonenumber='getPhoneNumber'>获取</button>
       </view>
     </view>
     <view class='item'>
       <label class='title'>验证码 </label>
       <view class='sendcode'>
         <input type='number' maxlength='4'></input>
-        <button data-mobile='{{mobile}}' open-type="getPhoneNumber" class='send' bindgetphonenumber='getPhoneNumber'>{{codestate}}</button>
+        <button data-mobile='{{mobile}}' class='send' >{{codestate}}</button>
       </view>
     </view>
 

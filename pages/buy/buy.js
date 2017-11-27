@@ -61,6 +61,8 @@ Page({
 
     } else {
 
+      console.log(this.data.up);
+
       fetch({
         url: '/frt/invoke',
         //   baseUrl: "http://192.168.50.57:9888", 
@@ -70,7 +72,7 @@ Page({
           ccId: '39304981a1b8d8a2dba6dc1b318267daa5c7ba4acfea4a99dab15e7ef9aee2c2',
           usr: wx.getStorageSync('unionId'),
           acc: wx.getStorageSync('unionId'),
-          reacc: 'frtpool',
+          reacc: this.data.up,
           amt: this.data.amt
         },
         noLoading: false,
@@ -131,6 +133,7 @@ Page({
   onLoad: function (options) {
 
     this.data.vid = options.vid
+    this.data.up = options.up
     this.data.amt = 10
   },
 
