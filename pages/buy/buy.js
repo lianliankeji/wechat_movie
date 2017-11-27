@@ -13,17 +13,12 @@ Page({
     console.log(e.detail.errMsg)
     console.log(e.detail.iv)
     console.log(e.detail.encryptedData)
-    if (e.detail.errMsg == 'getPhoneNumber:fail user deny') {
-      wx.showModal({
-        title: '提示',
-        showCancel: false,
-        content: '未授权',
-        success: function (res) { }
-      })
-    } else {
+    
+    var that = this
+    if (e.detail.errMsg != 'getPhoneNumber:fail user deny') {
 
       wx.request({
-        url: 'https://store.lianlianchains.com/video/wx/decodeUserInfo',
+        url: 'https://store.lianlianchains.com/video/wx/decodePhone/',
         data: {
           openid: wx.getStorageSync('user').openid,
           session_key: wx.getStorageSync('user').session_key,
@@ -32,17 +27,15 @@ Page({
         },
         method: 'GET',
         success: function (secr) {
-          console.log(secr)
+          console.log(secr);
           
+          that.setData({
+            mobile: secr.data.ret.phone
+          })
+
         }
       });
 
-      wx.showModal({
-        title: '提示',
-        showCancel: false,
-        content: '同意授权',
-        success: function (res) { }
-      })
     }
   },  
 

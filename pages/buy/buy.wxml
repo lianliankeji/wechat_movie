@@ -11,7 +11,7 @@
     <view class='item'>
       <label class='title'>手机 </label>
       <view>
-        <input type='number' maxlength='11'></input>
+        <input type='number' maxlength='11' value='{{mobile}}'></input>
       </view>
     </view>
     <view class='item'>
