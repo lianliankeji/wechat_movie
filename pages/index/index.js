@@ -22,6 +22,10 @@ Page({
     this.data.up = e.target.dataset.up;
     this.videoContext = wx.createVideoContext(this.data.vid + '')
 
+    if (wx.getStorageSync('unionId') == this.data.up) {
+      return
+    }
+
     fetch({
       url: '/video/validate',
       //   baseUrl: "http://192.168.50.57:9888", 
@@ -127,11 +131,124 @@ Page({
       this.querymovie()
     }
   },
+  initfrt() {
+
+    fetch({
+      url: '/frt/query',
+      //   baseUrl: "http://192.168.50.57:9888", 
+      baseUrl: "https://store.lianlianchains.com",
+      data: {
+        func: 'queryAcc',
+        ccId: '39304981a1b8d8a2dba6dc1b318267daa5c7ba4acfea4a99dab15e7ef9aee2c2',
+        usr: wx.getStorageSync('unionId'),
+        acc: wx.getStorageSync('unionId')
+      },
+      noLoading: false,
+      method: "GET",
+      header: { 'content-type': 'application/x-www-form-urlencoded' }
+      //  header: { 'content-type': 'application/json' }
+    }).then(res => {
+      console.log(res)
+      if (res.code == '0') {
+
+        if (res.result == '0') {
+
+          // 开户
+          this.createfrt();
+
+        } else {
+
+          // 查询
+          this.queryfrt();
+        }
+
+      }
+    }).catch(err => {
+
+      console.log("出错了")
+      wx.showToast({
+        title: '网络繁忙'
+      })
+      console.log(err)
+    })
+
+  },
+  queryfrt() {
+
+    fetch({
+      url: '/frt/query',
+      //   baseUrl: "http://192.168.50.57:9888", 
+      baseUrl: "https://store.lianlianchains.com",
+      data: {
+        func: 'query',
+        ccId: '39304981a1b8d8a2dba6dc1b318267daa5c7ba4acfea4a99dab15e7ef9aee2c2',
+        usr: wx.getStorageSync('unionId'),
+        acc: wx.getStorageSync('unionId')
+      },
+      noLoading: false,
+      method: "GET",
+      header: { 'content-type': 'application/x-www-form-urlencoded' }
+      //  header: { 'content-type': 'application/json' }
+    }).then(res => {
+      console.log(res)
+      if (res.code == '0') {
+
+        this.setData({
+          frt: res.result
+        })
+
+      }
+    }).catch(err => {
+
+      console.log("出错了")
+      wx.showToast({
+        title: '网络繁忙'
+      })
+      console.log(err)
+    })
+
+  },
+  createfrt() {
+
+    fetch({
+      url: '/frt/register',
+      //   baseUrl: "http://192.168.50.57:9888", 
+      baseUrl: "https://store.lianlianchains.com",
+      data: {
+        func: 'account',
+        ccId: '39304981a1b8d8a2dba6dc1b318267daa5c7ba4acfea4a99dab15e7ef9aee2c2',
+        usr: wx.getStorageSync('unionId'),
+        acc: wx.getStorageSync('unionId')
+      },
+      noLoading: false,
+      method: "GET",
+      header: { 'content-type': 'application/x-www-form-urlencoded' }
+      //  header: { 'content-type': 'application/json' }
+    }).then(result => {
+
+      console.log(result)
+      if (result.code == '0') {
+        this.setData({
+          frt: 0
+        })
+      }
+
+    }).catch(err => {
+
+      console.log("出错了")
+      wx.showToast({
+        title: '网络繁忙'
+      })
+      console.log(err)
+    })
+
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // frt
+    this.initfrt();
   },
 
   /**
