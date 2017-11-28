@@ -90,7 +90,7 @@ Page({
             baseUrl: "https://store.lianlianchains.com",
             data: {
               'id': this.data.vid,
-              'openid': wx.getStorageSync('user').openid
+              'openid': wx.getStorageSync('unionId')
             },
             noLoading: false,
             method: "GET",
