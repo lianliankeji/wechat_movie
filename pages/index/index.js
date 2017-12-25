@@ -11,7 +11,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    vurl: 'https://store.lianlianchains.com/videos/',
+    // vurl: 'https://store.lianlianchains.com/videos/',
+    vurl: 'http://1254251895.vod2.myqcloud.com/',
     vid: '0'
   },
   play(e) {

@@ -21,7 +21,7 @@
 
   <view wx:for="{{movieList}}" wx:key="index" wx:for-item="item">
     <view>
-      <video class='video' src='{{ vurl + item.url}}' objectFit='fill'
+      <video class='video' src='{{vurl + item.url}}' objectFit='fill'
         bindplay='play' id='{{item.id}}' 
         data-vid='{{item.id}}' data-up='{{item.uploaduser}}'></video>
     </view>
