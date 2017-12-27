@@ -46,7 +46,8 @@ Page({
     })
 
     const uploadTask = wx.uploadFile({
-      url: 'https://store.lianlianchains.com/video/upload/', //仅为示例，非真实的接口地址
+      url: 'https://store.lianlianchains.com/video/upload/',
+      // url: 'http://192.168.50.239:9777/video/upload/',
       filePath: this.data.videosrc,
       name: 'test',
       formData: {
