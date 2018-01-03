@@ -9,12 +9,12 @@
   <view class='info'>
     <view class='frt'>
       <view class='lname'>账户余额</view>
-      <view class='lvalue'>{{frt}} FRT</view>
+      <view class='lvalue'>{{DCT}} DCT</view>
     </view>
-    <view class='rc'>充值金额（FRT）</view>
+    <view class='rc'>充值金额（DCT）</view>
     <input type='number' maxlength='8' bindinput='setAmt'></input>
-    <view class='tr'>1 FRT=1 RMB</view>
-    <view class='sale'>.首充大于50RMB送10FRT</view>
+    <view class='tr'>1 DCT=1 RMB</view>
+    <view class='sale'>.首充大于50RMB送10DCT</view>
     <view class='btn' bindtap='buy'>确认充值</view>
   </view>
 

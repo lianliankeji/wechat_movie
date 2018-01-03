@@ -8,7 +8,7 @@
     </view>
     <view class='score'>
       <label>{{nickName}}</label>
-      <label class='frt'>{{frt}} FRT</label>
+      <label class='frt'>{{frt}} DCT</label>
     </view>
     <view class='recharge'>
       <view bindtap='recharge'>充值</view>

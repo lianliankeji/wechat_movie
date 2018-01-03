@@ -6,7 +6,7 @@
 
     <view class='item'>
       <label class='title'>价格 </label>
-      <view class='price'>10 FRT</view>
+      <view class='price'>10 DCT</view>
     </view>
     <view class='item'>
       <label class='title'>手机号 </label>
