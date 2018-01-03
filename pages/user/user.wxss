@@ -1,7 +1,10 @@
 /* pages/user/user.wxss */
 
 .container {
+  height: auto;
   background-color: #f4f4f4;
+  overflow: hidden; 
+  -webkit-overflow-scrolling : touch;  /* liuhx:可以把这整行注释掉对比差别 */  
 }
 
 .title {
