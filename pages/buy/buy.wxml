@@ -11,19 +11,19 @@
     <view class='item'>
       <label class='title'>手机号 </label>
       <view class='sendcode'>
-        <input type='number' maxlength='11' value='{{mobile}}'></input>
-        <button open-type="getPhoneNumber" class='send' bindgetphonenumber='getPhoneNumber'>获取</button>
+        <input type='number' maxlength='11' value='{{mobile}}' bindinput='phoneInput'></input>
+        <button open-type="getPhoneNumber" class='send' bindgetphonenumber='getPhoneNumber'>获 取</button>
       </view>
     </view>
     <view class='item'>
       <label class='title'>验证码 </label>
       <view class='sendcode'>
-        <input type='number' maxlength='4'></input>
-        <button data-mobile='{{mobile}}' class='send' >{{codestate}}</button>
+        <input type='number' maxlength='4' bindinput='smsInput'></input>
+        <button disabled='{{smsBtn}}' data-mobile='{{mobile}}' class='send' bindtap='sendMsg' >{{codestate}}</button>
       </view>
     </view>
 
-    <view class='button' bindtap='buy'>购买</view>
+    <view class='button' bindtap='checkSms'>购买</view>
 
   </view>
 </view>

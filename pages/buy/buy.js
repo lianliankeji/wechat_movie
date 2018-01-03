@@ -7,7 +7,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    codestate: "发送"
+    codestate: "发 送",
+    smsCode: '',
+    smsBtn: false,
   },
   getPhoneNumber: function (e) {
     console.log(e.detail.errMsg)
@@ -37,12 +39,108 @@ Page({
       });
 
     }
-  },  
+  }, 
+
+  phoneInput(e) {
+    this.setData({
+      mobile: e.detail.value
+    });
+  }, 
+
+  sendMsg() {
+    if (this.data.mobile) {
+      this.sendSms();
+    } else {
+      wx.showModal({
+        content: '手机号不能为空',
+        showCancel: false,
+        confirmColor: '#DDBF90'
+      });
+      return;
+    } 
+
+    let num = 60;
+
+    var timer = setInterval(() => {
+      if(num === 1) {
+        this.setData({
+          codestate: '重新发送',
+          smsBtn: false
+        });
+        clearInterval(timer);
+      }else{
+        num--;
+        this.setData({
+          codestate: num + ' s',
+          smsBtn: true
+        });
+      }
+    }, 1000);
+  },
+
+  sendSms() {
+    fetch({
+      url: "/sms/send",
+      //   baseUrl: "http://192.168.50.57:9888",
+      baseUrl: "https://store.lianlianchains.com",
+      data: {
+        mobile: this.data.mobile
+      },
+      noLoading: true,
+      method: "GET",
+      //   header: { 'content-type': 'application/x-www-form-urlencoded' }
+      header: { 'content-type': 'application/json' }
+    }).then(result => {
+      if (result.code != 200) {
+        wx.showToast({
+          title: '发送密码失败'
+        })
+
+      } else {
+
+      }
+    }).catch(err => {
+      console.log(err)
+    });
+  },
+
+  smsInput(e) {
+    this.setData({
+      smsCode: e.detail.value
+    });
+  },
+
+  checkSms() {
+    fetch({
+      url: "/sms/verify",
+      //   baseUrl: "http://192.168.50.57:9888",
+      baseUrl: "https://store.lianlianchains.com",
+      data: {
+        mobile: this.data.mobile,
+        code: this.data.smsCode,
+      },
+      noLoading: true,
+      method: "GET",
+      header: { 'content-type': 'application/x-www-form-urlencoded' }
+      // header: { 'content-type': 'application/json' }
+    }).then(result => {
+      if (result.code == 200) {
+        this.buy();
+      } else {
+        wx.showToast({
+          title: '验证码错误',
+          duration: 1500
+        })
+      }
+    }).catch(err => {
+      console.log("出错了")
+      console.log(err)
+
+    });
+  },
 
   buy() {
-
     if (parseInt(this.data.frt) < parseInt(this.data.amt)) {
-
       wx.showModal({
         title: '余额不足请充值',
         success: function (res) {
