@@ -4,6 +4,7 @@
     "pages/result/result",
     "pages/buy/buy",
     "pages/user/user",
+    "pages/card/card",
     "pages/recharge/recharge",
     "pages/upload/upload"
   ],

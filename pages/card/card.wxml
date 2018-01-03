@@ -1,0 +1,15 @@
+<view class="container">
+  <view class='title'>选择卡面</view>
+  <view class='card-list'>
+      <image bindtap='selectCard' data-index='{{idx}}' wx:for="{{cards}}" wx:for-index="idx" wx:for-item="item" class='img {{selectId == idx ? "active" : ""}}' src="{{item.url}}"></image>
+  </view>
+  <view class='footer'>
+    <view>
+      <text class='money'>￥{{cards[selectId].fee}}</text>
+      <text class='youhui'>赠送 {{cards[selectId].score}} DTC</text>
+    </view>
+    <view>
+      <button class='btn' data-fee='{{cards[selectId].fee}}' data-score='{{cards[selectId].score}}' bindtap='buy'>购买</button>
+    </view>
+  </view>
+</view>
