@@ -3,7 +3,7 @@
   <view>
     <image class='top' src='../../image/um1.png'></image>
   </view>
-  <view class='title'>热门影片</view>
+  <view class='title'>热门</view>
   <!-- <view>
     <video id='myVideo' class='video' objectFit='fill' src='https://store.lianlianchains.com/videos/Burning%20Ice.mp4'></video>
   </view>
@@ -30,8 +30,8 @@
         <view class='info'>
 
           <view>
-            <text class='gold'>#导演/</text>{{item.director}}
-            <text class='gold'>#演员/</text>{{item.actor}}
+            <text class='gold'>#作者/</text>{{item.director}}
+            <text class='gold'>#简介/</text>{{item.actor}}
           </view>
 
           <view>

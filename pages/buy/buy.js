@@ -167,7 +167,7 @@ Page({
         baseUrl: "https://store.lianlianchains.com",
         data: {
           func: 'transefer',
-          ccId: '39304981a1b8d8a2dba6dc1b318267daa5c7ba4acfea4a99dab15e7ef9aee2c2',
+          ccId: '',
           usr: wx.getStorageSync('unionId'),
           acc: wx.getStorageSync('unionId'),
           reacc: this.data.up,
@@ -252,8 +252,8 @@ Page({
       //   baseUrl: "http://192.168.50.57:9888", 
       baseUrl: "https://store.lianlianchains.com",
       data: {
-        func: 'query',
-        ccId: '39304981a1b8d8a2dba6dc1b318267daa5c7ba4acfea4a99dab15e7ef9aee2c2',
+        func: 'getBalance',
+        ccId: '',
         usr: wx.getStorageSync('unionId'),
         acc: wx.getStorageSync('unionId')
       },

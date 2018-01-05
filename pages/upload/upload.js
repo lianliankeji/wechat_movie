@@ -65,7 +65,7 @@ Page({
           baseUrl: "https://store.lianlianchains.com",
           data: {
             func: 'transefer',
-            ccId: '39304981a1b8d8a2dba6dc1b318267daa5c7ba4acfea4a99dab15e7ef9aee2c2',
+            ccId: '',
             usr: 'frtpool',
             acc: 'frtpool',
             reacc: wx.getStorageSync('unionId'),

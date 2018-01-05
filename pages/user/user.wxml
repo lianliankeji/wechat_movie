@@ -16,11 +16,11 @@
   </view>
 
   <view class='list'>
-    <view class='listtitle'>我的影片</view>
-    <view>
-      <image wx:if="{{!hidden}}" class='video' src='../../image/um2.png' bindtap='showvideo'></image>
+    <view class='listtitle'>我的</view>
+    <!-- <view> -->
+      <!-- <image wx:if="{{!hidden}}" class='video' src='../../image/um2.png' bindtap='showvideo'></image> -->
       <!-- <video wx:if="{{hidden}}" class='video' autoplay poster='../../image/playmovie.png' objectFit='fill' src='https://store.lianlianchains.com/test.mp4'></video> -->
-    </view>
+    <!-- </view> -->
     <view>
       <image wx:if="{{!hidden}}" class='video' src='../../image/um1.png' bindtap='showvideo'></image>
       <!-- <video wx:if="{{hidden}}" class='video' autoplay poster='../../image/playmovie.png' objectFit='fill' src='https://store.lianlianchains.com/test.mp4'></video> -->

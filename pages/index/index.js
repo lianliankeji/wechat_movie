@@ -15,8 +15,6 @@ Page({
   },
   play(e) {
 
-    console.log(e)
-
     this.data.vid = e.target.dataset.vid;
     this.data.up = e.target.dataset.up;
     this.videoContext = wx.createVideoContext(this.data.vid + '')
@@ -38,7 +36,6 @@ Page({
       header: { 'content-type': 'application/x-www-form-urlencoded' }
       //  header: { 'content-type': 'application/json' }
     }).then(res => {
-      console.log(res)
 
       if (res.ec == '000000') {
 
@@ -83,12 +80,10 @@ Page({
       noLoading: true,
       header: { 'content-type': 'application/x-www-form-urlencoded' }
     }).then(res => {
-      console.log(res)
 
       totalpage = res.data.totalpage
       movieList = movieList.concat(res.data.video)
 
-      console.log(movieList)
 
       this.setData({
         movieList: movieList
@@ -112,9 +107,6 @@ Page({
   },
   loadMore() {
 
-    console.log(totalpage)
-    console.log(page)
-
     if (page >= totalpage - 1) {
 
       console.log("没有更多了")
@@ -137,8 +129,8 @@ Page({
       //   baseUrl: "http://192.168.50.57:9888", 
       baseUrl: "https://store.lianlianchains.com",
       data: {
-        func: 'queryAcc',
-        ccId: '39304981a1b8d8a2dba6dc1b318267daa5c7ba4acfea4a99dab15e7ef9aee2c2',
+        func: 'isAccExists',
+        ccId: '',
         usr: wx.getStorageSync('unionId'),
         acc: wx.getStorageSync('unionId')
       },
@@ -147,7 +139,6 @@ Page({
       header: { 'content-type': 'application/x-www-form-urlencoded' }
       //  header: { 'content-type': 'application/json' }
     }).then(res => {
-      console.log(res)
       if (res.code == '0') {
 
         if (res.result == '0') {
@@ -176,7 +167,7 @@ Page({
       baseUrl: "https://store.lianlianchains.com",
       data: {
         func: 'account',
-        ccId: '39304981a1b8d8a2dba6dc1b318267daa5c7ba4acfea4a99dab15e7ef9aee2c2',
+        ccId: '',
         usr: wx.getStorageSync('unionId'),
         acc: wx.getStorageSync('unionId')
       },
@@ -186,7 +177,6 @@ Page({
       //  header: { 'content-type': 'application/json' }
     }).then(result => {
 
-      console.log(result)
       if (result.code == '0') {
         this.setData({
           frt: 0
@@ -235,7 +225,6 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    console.log('hide')
 
     this.videoContext = wx.createVideoContext(this.data.vid + '')
     this.videoContext.pause()

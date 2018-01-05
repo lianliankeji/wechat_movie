@@ -6,26 +6,26 @@
   <progress class='pro' wx:if='{{hidden}}' 
   percent="{{progress}}" stroke-width="3" color='#ddbf90' active="true" />
 
-  <view class='img'>
+  <view class='img' bindtap='uploadimg'>
     <video src='{{videosrc}}' wx:if='{{show}}' class='video'></video>
-    <image src='../../image/upload.png' wx:if='{{!show}}' class='upimg' bindtap='uploadimg'></image>
+    <image src='../../image/upload.png' wx:if='{{!show}}' class='upimg'></image>
     <view class='uptext' wx:if='{{!show}}'>上传视频</view>
   </view>
 
   <view class='tr'>
-    <label>导演</label>
+    <label>作者</label>
     <input bindinput='setDr' value='{{director}}'></input>
   </view>
 
   <view class='tr'>
-    <label>主演</label>
+    <label>简介</label>
     <input bindinput='setAc' value='{{actor}}'></input>
   </view>
 
-  <view class='tr'>
+  <!-- <view class='tr'>
     <label>剧情</label>
     <textarea bindinput='setDis' value='{{description}}'></textarea>
-  </view>
+  </view> -->
 
   <view wx:if='{{!hidden}}' class='btn' bindtap='upload' disabled='true'>提交</view>
 
