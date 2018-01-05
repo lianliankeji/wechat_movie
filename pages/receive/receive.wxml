@@ -1,0 +1,4 @@
+<view class="container">
+  <view class='title'>扫一扫  向我付款</view>
+  <image class='scanCode' src='{{scanCode}}'></image>
+</view>

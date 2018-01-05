@@ -1,9 +1,12 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/payment/payment",
+    "pages/receive/receive",
+    "pages/transfer/transfer",
+    "pages/user/user",
     "pages/result/result",
     "pages/buy/buy",
-    "pages/user/user",
     "pages/card/card",
     "pages/recharge/recharge",
     "pages/upload/upload"

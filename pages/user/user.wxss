@@ -1,20 +1,48 @@
 /* pages/user/user.wxss */
 
 .container {
-  height: auto;
+  /* height: auto; */
   background-color: #f4f4f4;
-  overflow: hidden; 
-  -webkit-overflow-scrolling : touch;  /* liuhx:可以把这整行注释掉对比差别 */  
+  /* overflow: hidden; */
+  -webkit-overflow-scrolling: touch; /* liuhx:可以把这整行注释掉对比差别 */
 }
 
 .title {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  padding: 52rpx;
-  width: 90%;
+  justify-content: space-between;
+  padding: 40rpx;
   background-color: #fff;
   margin-top: 10rpx;
+}
+
+.title .left {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.title .btn-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 20rpx;
+}
+
+.title .btn-area .btn {
+  width: 120rpx;
+  height: 50rpx;
+  text-align: center;
+  line-height: 50rpx;
+  border: 1px solid #ddbf90;
+  border-radius: 4px;
+  font-size: 28rpx;
+  color: #ddbf90;
+}
+
+.title .btn-area .btn-recharge{
+   margin-right: 30rpx; 
 }
 
 .img {

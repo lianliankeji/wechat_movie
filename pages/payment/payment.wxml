@@ -1,0 +1,28 @@
+<view class='container'>
+
+  <view class='buy'>
+    <view class='item'>
+      <view class='title'><text space='true' decode="true">金&nbsp;&nbsp;&nbsp;额</text></view>
+      <view class='sendcode'>
+        <input class='input' type='number' placeholder-class='placehoder' value='{{money}}' bindinput='moneyInput' placeholder='请输入金额'></input>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='title'>手机号 </view>
+      <view class='sendcode'>
+        <input class='input' type='number' placeholder-class='placehoder' maxlength='11' value='{{mobile}}' bindinput='phoneInput' placeholder='请输入手机号'></input>
+        <button open-type="getPhoneNumber" class='send' bindgetphonenumber='getPhoneNumber'>获 取</button>
+      </view>
+    </view>
+    <view class='item'>
+      <view class='title'>验证码 </view>
+      <view class='sendcode'>
+        <input class='input' type='number' value="{{smsCode}}" placeholder-class='placehoder' maxlength='4' bindinput='smsInput' placeholder='请输入验证码'></input>
+        <button disabled='{{smsBtn}}' data-mobile='{{mobile}}' class='send' bindtap='sendMsg' >{{codestate}}</button>
+      </view>
+    </view>
+
+    <view class='button' bindtap='buy'>支 付</view>
+    <view class='prompt'>实时到账，扣除1分钱手续费</view>
+  </view>
+</view>

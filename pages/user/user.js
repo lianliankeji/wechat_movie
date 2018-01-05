@@ -17,6 +17,12 @@ Page({
       url: '../card/card',
     })
   },
+
+  transfer() {
+    wx.navigateTo({
+      url: '../transfer/transfer',
+    })
+  },
   
   queryfrt() {
 

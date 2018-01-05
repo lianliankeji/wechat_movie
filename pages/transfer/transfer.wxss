@@ -1,0 +1,71 @@
+page {
+  background-color: #fff;
+}
+
+.head {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-size: 30rpx;
+  color: #fff;
+  background-color: #ddbf90;
+  height: 160rpx;
+}
+
+.received-img, .payment-img {
+  width: 48rpx;
+  height: 40rpx;
+  margin: 0 58px;
+}
+
+.title {
+  font-size: 30rpx;
+  color: #333;
+  text-align: center;
+  margin-top: 50rpx;
+  position: relative;
+  line-height: 42rpx;
+}
+
+.line {
+  width: 120rpx;
+  height: 4rpx;
+  background: #ddbf90;
+  margin: 0 auto;
+}
+
+.list {
+  font-size: 30rpx;
+  color: #666;
+}
+
+.list-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40rpx;
+  border-bottom: 1px solid #ECECEC;
+}
+
+.num{
+  min-width: 100rpx;
+  text-align: right;
+}
+
+.Font-Red{
+  color: #DC0606;
+}
+
+.Font-Green{
+  color: #0A9045;
+}
+
+.noData{
+  color: #666;
+  font-size: 30rpx;
+  text-align: center;
+  margin: 40rpx 0;
+}

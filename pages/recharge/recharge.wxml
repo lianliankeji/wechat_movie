@@ -18,4 +18,4 @@
     <view class='btn' bindtap='buy'>确认充值</view>
   </view>
 
-</view>
+</view> 

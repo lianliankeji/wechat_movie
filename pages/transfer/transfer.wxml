@@ -1,0 +1,24 @@
+<view class="contianer">
+  <view class='head'>
+    <view bindtap='scanCode'>
+      <image class='received-img' src="../../image/received.png"></image>
+      <view>收款</view>
+    </view>
+    <view bindtap='pay'>
+      <image class='payment-img' src="../../image/payment.png"></image>
+      <view>付款</view>
+    </view>
+  </view>
+  <view class='title'>交易明细</view>
+  <view class='line'></view>
+  <view class='list'>
+    <view class='list-item' wx:for="{{details}}" wx:for-index="idx" wx:key="{{idx}}">
+      <view>{{item.time}}</view>
+      <view>{{item.desc ? item.desc : '暂无'}}</view>
+      <view class='num {{item.tsf ? "Font-Red":"Font-Green"}}'>
+        {{item.tsf ? ("+" + item.amt):("-" + item.amt)}}
+      </view>
+    </view>
+  </view>
+  <view class='noData' wx:if="{{!hasMore}}">暂无更多数据</view>
+</view>
