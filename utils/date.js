@@ -19,3 +19,9 @@ export const timeformat = (timestamp,types) => {
   }
   
 }
+
+ // {
+      //   "selectedIconPath": "./image/addAct.png",
+      //   "iconPath": "./image/add.png",
+      //   "pagePath": "pages/upload/upload"
+      // },

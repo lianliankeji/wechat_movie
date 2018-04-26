@@ -30,11 +30,6 @@
         "pagePath": "pages/index/index"
       },
       {
-        "selectedIconPath": "./image/addAct.png",
-        "iconPath": "./image/add.png",
-        "pagePath": "pages/upload/upload"
-      },
-      {
         "selectedIconPath": "./image/mineAct.png",
         "iconPath": "./image/mine.png",
         "pagePath": "pages/user/user"
